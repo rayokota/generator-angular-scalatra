@@ -29,7 +29,8 @@ object ScalatraSquerylBuild extends Build {
         "org.json4s"   %% "json4s-jackson" % "3.2.6",
         "ch.qos.logback" % "logback-classic" % "1.0.6" % "runtime",
         "org.eclipse.jetty" % "jetty-webapp" % "8.1.8.v20121106" % "container",
-        "org.squeryl" %% "squeryl" % "0.9.5-6",
+        //"org.squeryl" %% "squeryl" % "0.9.5-6",
+        "org.squeryl" %% "squeryl" % "0.9.6-RC2",
         "org.apache.derby" % "derby" % "10.10.1.1",
         "c3p0" % "c3p0" % "0.9.1.2",
         "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container;provided;test" artifacts (Artifact("javax.servlet", "jar", "jar"))

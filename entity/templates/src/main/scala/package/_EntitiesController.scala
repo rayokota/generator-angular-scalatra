@@ -4,11 +4,13 @@ import org.scalatra._
 import scalate.ScalateSupport
 import <%= packageName %>.data.DatabaseInit
 import <%= packageName %>.data.DatabaseSessionSupport
+import <%= packageName %>.json.DateSerializer
 import <%= packageName %>.models.<%= _.capitalize(name) %>
 import <%= packageName %>.models.<%= _.capitalize(name) %>Db
 import org.json4s.{DefaultFormats, Formats}
 import org.scalatra.json._
 import org.squeryl.PrimitiveTypeMode._
+import java.text.SimpleDateFormat
 import java.util.Random
 import java.util.Collections
 
@@ -22,7 +24,9 @@ class <%= _.capitalize(pluralize(name)) %>Controller extends ScalatraServlet
 
   // Sets up automatic case class to JSON output serialization, required by
   // the JValueResult trait.
-  protected implicit val jsonFormats: Formats = DefaultFormats
+  protected implicit val jsonFormats: Formats = new DefaultFormats {
+    override def dateFormatter = new SimpleDateFormat("yyyy-MM-dd")
+  } + new DateSerializer
 
   // Before every action runs, set the content type to be in JSON format.
   before() {
@@ -31,7 +35,7 @@ class <%= _.capitalize(pluralize(name)) %>Controller extends ScalatraServlet
 
   get("/") {
     transaction {
-      <%= _.capitalize(name) %>Db.<%= pluralize(name) %>.toList
+      from(<%= _.capitalize(name) %>Db.<%= pluralize(name) %>)(select(_)).toList
     }
   }
 

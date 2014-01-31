@@ -76,6 +76,7 @@ AngularScalatraGenerator.prototype.app = function app() {
   var scalaDir = 'src/main/scala/';
   var appDir = scalaDir + packageFolder + '/';
   var dataDir = appDir + 'data/';
+  var jsonDir = appDir + 'json/';
   var modelsDir = appDir + 'models/';
   var webappDir = 'src/main/webapp/';
   var webinfDir = webappDir + 'WEB-INF/';
@@ -84,6 +85,7 @@ AngularScalatraGenerator.prototype.app = function app() {
   this.mkdir(resourcesDir);
   this.mkdir(appDir);
   this.mkdir(dataDir);
+  this.mkdir(jsonDir);
   this.mkdir(modelsDir);
   this.mkdir(webappDir);
   this.mkdir(webinfDir);
@@ -94,9 +96,10 @@ AngularScalatraGenerator.prototype.app = function app() {
   this.copy('project/plugins.sbt', projectDir + 'plugins.sbt');
   this.copy('sbt', 'sbt');
   this.copy('src/main/resources/logback.xml', resourcesDir + 'logback.xml');
-  this.template('src/main/scala/package/data/_DatabaseInit.scala', dataDir + 'DatabaseInit.scala');
-  this.template('src/main/scala/package/data/_DatabaseSessionSupport.scala', dataDir + 'DatabaseSessionSupport.scala');
   this.template('src/main/scala/_ScalatraBootstrap.scala', scalaDir + 'ScalatraBootstrap.scala');
+  this.template('src/main/scala/package/data/_DatabaseInit.scala', dataDir + 'DatabaseInit.scala');
+  this.template('src/main/scala/package/json/_DateSerializer.scala', jsonDir + 'DateSerializer.scala');
+  this.template('src/main/scala/package/data/_DatabaseSessionSupport.scala', dataDir + 'DatabaseSessionSupport.scala');
   this.template('src/main/scala/package/models/_ScalatraRecord.scala', modelsDir + 'ScalatraRecord.scala');
   this.copy('src/main/webapp/WEB-INF/web.xml', webinfDir + 'web.xml');
 
