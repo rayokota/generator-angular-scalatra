@@ -2,6 +2,8 @@
 
 A [Yeoman](http://yeoman.io) generator for [AngularJS](http://angularjs.org) and [Scalatra](http://scalatra.org/).
 
+Scalatra is a Scala-based micro-framework.  For AngularJS integration with other micro-frameworks, see https://github.com/rayokota/MicroFrameworkRosettaStone.
+
 ## Installation
 
 Install [Git](http://git-scm.com) and [node.js](http://nodejs.org).
@@ -21,7 +23,6 @@ In a new directory, generate the service:
 
 Run the service:
 
-    $ chmod +x sbt
     $ ./sbt
     > container:start
 
