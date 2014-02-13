@@ -6,7 +6,8 @@ Scalatra is a Scala-based micro-framework.  For AngularJS integration with other
 
 ## Installation
 
-Install [Git](http://git-scm.com) and [node.js](http://nodejs.org).
+Install [Git](http://git-scm.com), [node.js](http://nodejs.org), and [Java](https://www.java.com).
+
 Install Yeoman:
 
     npm install -g yo
