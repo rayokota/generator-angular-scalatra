@@ -1,6 +1,6 @@
 {
   "name": "generator-angular-scalatra",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A Yeoman generator for AngularJS + Scalatra",
   "keywords": [
     "yeoman-generator",
@@ -8,7 +8,7 @@
     "Scalatra",
     "Squeryl",
     "AngularJS",
-    "Twitter Bootstrap"
+    "Bootstrap"
   ],
   "homepage": "https://github.com/rayokota/generator-angular-scalatra",
   "bugs": "https://github.com/rayokota/generator-angular-scalatra/issues",
