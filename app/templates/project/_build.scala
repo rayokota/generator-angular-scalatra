@@ -7,7 +7,7 @@ import ScalateKeys._
 
 object ScalatraSquerylBuild extends Build {
   val Organization = "<%= packageName %>"
-  val Name = "Scalatra Squeryl"
+  val Name = "<%= baseName %>"
   val Version = "0.1.0-SNAPSHOT"
   val ScalaVersion = "2.10.2"
   val ScalatraVersion = "2.2.2"
@@ -28,7 +28,7 @@ object ScalatraSquerylBuild extends Build {
         "org.scalatra" %% "scalatra-json" % "2.2.2",
         "org.json4s"   %% "json4s-jackson" % "3.2.6",
         "ch.qos.logback" % "logback-classic" % "1.0.6" % "runtime",
-        "org.eclipse.jetty" % "jetty-webapp" % "8.1.8.v20121106" % "container",
+        "org.eclipse.jetty" % "jetty-webapp" % "8.1.8.v20121106" % "container;compile",
         //"org.squeryl" %% "squeryl" % "0.9.5-6",
         "org.squeryl" %% "squeryl" % "0.9.6-RC2",
         "org.apache.derby" % "derby" % "10.10.1.1",

@@ -91,11 +91,13 @@ AngularScalatraGenerator.prototype.app = function app() {
   this.mkdir(webinfDir);
   this.mkdir(testDir);
 
+  this.copy('sbt', 'sbt');
+  this.copy('assembly.sbt', 'assembly.sbt');
   this.copy('project/build.properties', projectDir + 'build.properties');
   this.template('project/_build.scala', projectDir + 'build.scala');
   this.copy('project/plugins.sbt', projectDir + 'plugins.sbt');
-  this.copy('sbt', 'sbt');
   this.copy('src/main/resources/logback.xml', resourcesDir + 'logback.xml');
+  this.template('src/main/scala/_JettyLauncher.scala', scalaDir + 'JettyLauncher.scala');
   this.template('src/main/scala/_ScalatraBootstrap.scala', scalaDir + 'ScalatraBootstrap.scala');
   this.template('src/main/scala/package/data/_DatabaseInit.scala', dataDir + 'DatabaseInit.scala');
   this.template('src/main/scala/package/json/_DateSerializer.scala', jsonDir + 'DateSerializer.scala');

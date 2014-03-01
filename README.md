@@ -29,6 +29,12 @@ Run the service:
 
 Your service will run at [http://localhost:8080](http://localhost:8080).
 
+Alternatively, you can build and run a fat jar with your project as follows:
+
+	export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
+	./sbt clean assembly
+	java -jar target/scala-2.10/[myapp]-assembly-0.1.0-SNAPSHOT.jar
+
 
 ## Creating a persistent entity
 
