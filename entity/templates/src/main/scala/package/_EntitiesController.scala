@@ -70,6 +70,7 @@ class <%= _.capitalize(pluralize(name)) %>Controller extends ScalatraServlet
     transaction {
       <%= _.capitalize(name) %>Db.<%= pluralize(name) %>.lookup(params("id").toLong).nonEmpty || halt(404)
       <%= _.capitalize(name) %>Db.<%= pluralize(name) %>.delete(params("id").toLong)
+      status(204)
       ""
     }
   }
