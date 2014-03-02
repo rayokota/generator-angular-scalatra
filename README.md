@@ -16,6 +16,8 @@ Install the Angular-Scalatra generator:
 
     npm install -g generator-angular-scalatra
 
+The above prerequisites can be installed to a VM using the [Angular-Scalatra provisioner](https://github.com/rayokota/provision-angular-scalatra).
+
 ## Creating a Scalatra service
 
 In a new directory, generate the service:
